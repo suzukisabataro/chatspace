@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# Pictweet DB設計
+# chatspace DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -30,8 +30,9 @@ Things you may want to cover:
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :groups
+- has_many :groups,through: :group_users
 - has_many :comments
+- has_many :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -45,17 +46,16 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text||
-|text|text||
+|name|string|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :user
+- has_many :users,through: :group_users
 - has_many :comments
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|body|image|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |tweet_id|integer|null: false, foreign_key: true|
 ### Association
