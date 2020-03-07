@@ -1,0 +1,45 @@
+.side-bar {
+  box-sizing: border-box;
+  color: white;
+  width: 300px;
+  float: left;
+  display: block;
+  .header {
+    background-color: #253141;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+        &__name {
+          font-weight: bold;
+          display: inline;
+        }
+        &__lists {
+          float: right;
+          display: inline-block;
+          .list {
+            display: inline-block;
+          }
+          .icon {
+            color: white;
+          }
+        }
+      }
+    
+      .groups {
+        background-color: #2f3151;
+        height: calc(100vh - 100px);
+        padding: 0 20px;
+        .group {
+          box-sizing: border-box;
+          padding: 20px 0 40px;
+          &__name {
+            color: white;
+          }
+          &__message {
+            color: white;
+            margin-top: 5px;
+            
+          }
+        }
+      }
+    }
