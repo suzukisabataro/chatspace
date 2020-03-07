@@ -14,14 +14,14 @@
           margin-left: 20px;
           box-sizing: border-box;
           width: 60px;
-          .header-left__group-name{
+          &__group-name{
             width: 60px;
             height: 20px;
             margin-bottom: 15px;
             font-size: 20px;
             columns: #333333;
           }
-          .header-left__member-name{
+          &__member-name{
             width: 60px;
             height: 20px;
             font-size: 12px;
@@ -33,7 +33,7 @@
           width:72px;
           margin: 0 20px 0 auto;
 
-          .header-right__edit{
+          &__edit{
             display: block;
             height: 40px;
             margin: 28px 0 28px 0;
