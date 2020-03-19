@@ -20,12 +20,14 @@
             margin-bottom: 15px;
             font-size: 20px;
             columns: #333333;
+            white-space: nowrap;
           }
           &__member-name{
             width: 60px;
             height: 20px;
             font-size: 12px;
             columns: #999999;
+            white-space: nowrap;
           }
         }
         .header-right{
@@ -60,7 +62,7 @@
               font-weight:bold;
               color: #333333;
             }
-            &__deta{
+            &__date{
               font-size:12px;
               padding-left:10px;
               color: #999999;
@@ -74,47 +76,46 @@
           font-size: 14px;
         }
       }
-      .chat-footer{
+      .form{
         background-color: #d2d2d2;
         height: 90px;
         box-sizing: border-box;
         padding: 20px 50px 20px 40px;
-        .footer{
+        .new_message{
           height: 50px;
-          width: 100%;
-          box-sizing: border-box;
-          display: flex;
-          .messege-box{
-            position: relative;
-            width:100%;
-            background-color: white;
-            &__text{
-              height: 50px;
-              padding: 10px 40px 0 10px;
-              width: 100%;
-              color: #434a54;
-            }
-            &__icon{
-              position: absolute;
-              top: 10px;
-              right: 10px;
-              font-size: 13px;
-              height: 40px;
-              width: 20px;
-                input{
-                  display: none;
-                }
-            }
-          }  
-          .send-box{
-            width: 100px;
+          color: #434a54;
+          display:flex;
+          position: relative;
+          .form__text{
             height: 50px;
-            padding: 10px 30px;
-            margin-left: 15px;
-            background-color: skyblue;
-            color: snow;
+            padding-right: 10px;
+            width: 100%;
+            border: none;
           }
+          .form-icon{
+            position: absolute;
+            right: 140px;
+            &__image{
+              font-size: 20px;
+              line-height: 50px;
+              &__icon{
+              }
+              .file-input{
+                display: none;
+              }
+            }  
+          } 
+        .send-box{
+          background-color: $light_blue;
+          border: none;
+          color: $white;
+          float: right;
+          font-size: 16px;
+          height: 50px;
+          margin-left: 15px;
+          padding: 0 30px;
         }
       }
+    }
   }    
 }          
