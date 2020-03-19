@@ -2,45 +2,20 @@
   .header
     .header-left
       .header-left__group-name
-        test
+        = @group.name
       .header-left__member-name
-        members
+        ="Member:" + @group.users.pluck(:name).join(", ")
     .header-right
-      = link_to '#',class: "header-right__edit" do
+      = link_to edit_group_path(@group),class: "header-right__edit" do
         Edit
   .chat-btm
     .chat
-      .upper-chat
-        .upper-chat__user-name
-          aaaaaaaaa
-        .upper-chat__deta
-          2020/03/05
-      .lower-chat 
-      こんにチュワ 
-    .chat
-      .upper-chat
-        .upper-chat__user-name
-          っっヴェオリア
-        .upper-chat__deta
-          2020/03/05
-      .lower-chat 
-      こんちわ
-    .chat
-      .upper-chat
-        .upper-chat__user
-          gっご
-        .upper-chat__deta
-          2020/03/05
-      .lower-chat 
-      ここ多オッコおお%k    
-  .chat-footer
-    .footer
-      .messege-box
-        .messege-box__text
-          messege
-        .messege-box__icon 
-          %label{class: "icon-box"}
-            = icon('fas', 'image')
-            %input{type: "file"} 
-      .send-box
-        send
+      = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__text', placeholder: 'メッセージ' 
+      .form-icon
+        = f.label :image, class: 'form-icon__image' do
+          = icon('fas', 'image', class: 'form-icon__image__icon') 
+          = f.file_field :image, class: 'file-input' 
+      = f.submit 'Send', class: 'send-box'
