@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if (message.image) {
       var html = 
-      `<div class = "chat">
+      `<div class = "chat" data-message-id=${message.id}>
         <div class = "upper-chat">
           <div class = "upper-chat__user-name">
             ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
     return html;
     } else {
       var html = 
-      `<div class = "chat">
+      `<div class = "chat" data-message-id=${message.id}>
         <div class = "upper-chat">
           <div class = "upper-chat__user-name">
             ${message.user_name}
@@ -68,7 +68,8 @@ $(function(){
   $(function(){
     var reloadMessages = function(){  
       if (window.location.href.match(/\/groups\/\d+\/messages/)){ 
-        var last_message_id = $('.message:last').data("message-id"); 
+        var last_message_id = $('.chat:last').data("message-id"); 
+        console.log(last_message_id);
         $.ajax({
           url: "api/messages", 
           type: 'get', 
