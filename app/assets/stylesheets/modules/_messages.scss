@@ -34,17 +34,17 @@
           box-sizing: border-box;
           width:72px;
           margin: 0 20px 0 auto;
-
+          text-align: center;
           &__edit{
             display: block;
             height: 40px;
             margin: 28px 0 28px 0;
             font-size: 16px;
             border: solid 1px;
-            border-color: lightblue;
-            text-align: center;
-            color: lightblue;
+            border-color: #38aef0;
+            color: #38aef0;
             text-decoration: none;
+            line-height: 40px;
           }
         }
       }
@@ -88,13 +88,13 @@
           position: relative;
           .form__text{
             height: 50px;
-            padding-right: 10px;
             width: 100%;
             border: none;
+            padding: 0 40px 0 10px;
           }
           .form-icon{
             position: absolute;
-            right: 140px;
+            right: 125px;
             &__image{
               font-size: 20px;
               line-height: 50px;

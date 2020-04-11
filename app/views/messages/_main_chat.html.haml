@@ -12,7 +12,7 @@
     = render @messages
   .form
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__text', placeholder: 'メッセージ' 
+      = f.text_field :content, class: 'form__text', placeholder: 'type a message' 
       .form-icon
         = f.label :image, class: 'form-icon__image' do
           = icon('fas', 'image', class: 'form-icon__image__icon') 
